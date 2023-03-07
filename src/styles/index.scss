@@ -39,7 +39,6 @@ h2 {
 
 #main {
   h1 {
-    text-align: center;
     color: green;
     text-shadow: 0px 0px 6px white;
     font-size: 3rem;
@@ -73,6 +72,35 @@ h2 {
     border-radius: 12px;
     cursor: pointer;
   }
+
+  h2 {
+    text-shadow: 0 0 1px black;
+  }
+}
+
+#info-btn {
+  @extend %reset-appearance;
+
+  height: fit-content;
+  border: 2px solid black;
+  border-radius: 999px;
+  background-color: white;
+  font-weight: 600;
+
+  &:focus, &:hover {
+    transform: scale(1.1);
+  }
+}
+
+#info-modal {
+  ul {
+    font-family: diploma;
+    list-style: georgian;
+  }
+}
+
+#info-modal-overlay:focus {
+    border: 6px solid blue;
 }
 
 @media (max-width: 1180px) {
@@ -85,4 +113,7 @@ h2 {
 }
 
 @media (max-width: 576px) {
+  .modal {
+    max-width: 80%;
+  }
 }

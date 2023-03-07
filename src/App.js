@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import BigSmoke from './images/bigsmoke.webp'
 import Catalina from './images/catalina.webp'
 import Cesar from './images/cesar.webp'
@@ -12,8 +13,11 @@ import Toreno from './images/toreno.webp'
 import Wuzimu from './images/wuzimu.webp'
 
 import CharatcerCards from './components/CharacterCards'
+import InfoModal from './components/InfoModal'
 
 function App() {
+  const [showInfo, setShowInfo] = useState(false)
+
   const characters = [
     ['Big Smoke', BigSmoke],
     ['Catalina', Catalina],
@@ -31,7 +35,20 @@ function App() {
 
   return (
     <div id="main">
-      <h1>San Andreas Memory Game</h1>
+      {showInfo && <InfoModal setShowInfo={setShowInfo} />}
+
+      <div className="flexbox gap-10 flex-center">
+        <h1>San Andreas Memory Game</h1>
+        <button
+          id="info-btn"
+          onClick={() => {
+            setShowInfo((prev) => !prev)
+          }}
+        >
+          ?
+        </button>
+      </div>
+
       <CharatcerCards characters={characters} />
     </div>
   )
