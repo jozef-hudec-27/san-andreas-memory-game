@@ -17,9 +17,15 @@ export default function InfoModal(props) {
         </ul>
       </section>
 
-      <div id="info-modal-overlay" className="overlay" tabIndex="1" onClick={() => setShowInfo(false)} onKeyDown={(e) => {
-        if (['Enter', 'Space'].includes(e.code)) e.currentTarget.click()
-      }}></div>
+      <div
+        id="info-modal-overlay"
+        className="overlay"
+        tabIndex="1"
+        onClick={() => setShowInfo(false)}
+        onKeyDown={(e) => {
+          if (['Enter', 'Space'].includes(e.code)) e.currentTarget.click()
+        }}
+      ></div>
     </>
   )
 }

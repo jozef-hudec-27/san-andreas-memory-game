@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import BigSmoke from './images/bigsmoke.webp'
 import Catalina from './images/catalina.webp'
 import Cesar from './images/cesar.webp'
@@ -14,28 +15,66 @@ import Wuzimu from './images/wuzimu.webp'
 
 import CharatcerCards from './components/CharacterCards'
 import InfoModal from './components/InfoModal'
+import GameOverModal from './components/GameOverModal'
+import ScoreBoard from './components/ScoreBoard'
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    const temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+
+  return array
+}
 
 function App() {
   const [showInfo, setShowInfo] = useState(false)
+  const [repeatedCard, setRepeatedCard] = useState('')
+  const [score, setScore] = useState(0)
+  const [bestScore, setBestScore] = useState(0)
+  const [characters, setCharacters] = useState(
+    shuffleArray([
+      ['Big Smoke', BigSmoke, 1],
+      ['Catalina', Catalina, 2],
+      ['Cesar', Cesar, 3],
+      ['CJ', Cj, 4],
+      ['Claude', Claude, 5],
+      ['Madd Dogg', MaddDogg, 6],
+      ['Ryder', Ryder, 7],
+      ['Sweet', Sweet, 8],
+      ['Tenpenny', Tenpenny, 9],
+      ['The Truth', TheTruth, 10],
+      ['Toreno', Toreno, 11],
+      ['Wuzimu', Wuzimu, 12],
+    ])
+  )
+  const [usedCharacters, setUsedCharacters] = useState([])
 
-  const characters = [
-    ['Big Smoke', BigSmoke],
-    ['Catalina', Catalina],
-    ['Cesar', Cesar],
-    ['CJ', Cj],
-    ['Claude', Claude],
-    ['Madd Dogg', MaddDogg],
-    ['Ryder', Ryder],
-    ['Sweet', Sweet],
-    ['Tenpenny', Tenpenny],
-    ['The Truth', TheTruth],
-    ['Toreno', Toreno],
-    ['Wuzimu', Wuzimu],
-  ]
+  const randomizeCharacters = () => {
+    setCharacters((prev) => {
+      const newCharacters = shuffleArray(prev.slice())
+      return newCharacters
+    })
+  }
+
+  const gameOver = (repeatedCard) => {
+    setScore(0)
+    setUsedCharacters([])
+    setRepeatedCard(repeatedCard)
+  }
 
   return (
     <div id="main">
       {showInfo && <InfoModal setShowInfo={setShowInfo} />}
+      {repeatedCard && (
+        <GameOverModal
+          repeatedCard={repeatedCard}
+          setRepeatedCard={setRepeatedCard}
+          randomizeCharacters={randomizeCharacters}
+        />
+      )}
 
       <div className="flexbox gap-10 flex-center">
         <h1>San Andreas Memory Game</h1>
@@ -49,7 +88,17 @@ function App() {
         </button>
       </div>
 
-      <CharatcerCards characters={characters} />
+      <CharatcerCards
+        characters={characters}
+        randomizeCharacters={randomizeCharacters}
+        setScore={setScore}
+        setBestScore={setBestScore}
+        gameOver={gameOver}
+        usedCharacters={usedCharacters}
+        setUsedCharacters={setUsedCharacters}
+      />
+
+      <ScoreBoard current={score} best={bestScore} />
     </div>
   )
 }

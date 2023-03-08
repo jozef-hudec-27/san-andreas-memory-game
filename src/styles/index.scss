@@ -22,10 +22,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url('../images/grovestreet.jpg');
   background-size: cover;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
 }
 
 h1 {
@@ -42,6 +54,7 @@ h2 {
     color: green;
     text-shadow: 0px 0px 6px white;
     font-size: 3rem;
+    margin: 12px 0;
   }
 }
 
@@ -58,6 +71,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 12px;
 
   &:focus,
   &:hover {
@@ -87,20 +101,25 @@ h2 {
   background-color: white;
   font-weight: 600;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     transform: scale(1.1);
   }
 }
 
 #info-modal {
+  color: black;
+
   ul {
     font-family: diploma;
     list-style: georgian;
   }
 }
 
-#info-modal-overlay:focus {
-    border: 6px solid blue;
+#score-board {
+  position: absolute;
+  top: 4px;
+  right: 4px;
 }
 
 @media (max-width: 1180px) {
@@ -110,6 +129,10 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  #score-board > div {
+    flex-direction: row;
+    gap: 12px;
+  }
 }
 
 @media (max-width: 576px) {

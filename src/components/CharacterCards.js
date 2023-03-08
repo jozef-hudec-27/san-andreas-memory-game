@@ -1,14 +1,24 @@
 import CharatcerCard from './CharacterCard'
 
 export default function CharatcerCards(props) {
-  const { characters } = props
+  const { characters, randomizeCharacters, setScore, setBestScore, gameOver, usedCharacters, setUsedCharacters } = props
 
   return (
-    <div id="character-cards">
+    <section id="character-cards">
       {characters.map((character, i) => {
-        const [name, image] = character
-        return <CharatcerCard key={i} name={name} image={image} />
+        return (
+          <CharatcerCard
+            key={i}
+            character={character}
+            randomizeCharacters={randomizeCharacters}
+            setScore={setScore}
+            setBestScore={setBestScore}
+            gameOver={gameOver}
+            usedCharacters={usedCharacters}
+            setUsedCharacters={setUsedCharacters}
+          />
+        )
       })}
-    </div>
+    </section>
   )
 }
