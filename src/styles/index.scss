@@ -107,12 +107,32 @@ h2 {
   }
 }
 
-#info-modal {
+#info-modal,
+#game-over-modal {
+  font-family: diploma;
   color: black;
 
   ul {
-    font-family: diploma;
     list-style: georgian;
+  }
+}
+
+.play-again-btn {
+  @extend %reset-appearance;
+
+  border: 1px solid darkgreen;
+  border-radius: 999px;
+  box-shadow: 0 0 5px lightgreen;
+  transition-duration: 0.5s;
+  font-family: pricedown;
+  font-size: 2rem;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 5px 3px green;
   }
 }
 
