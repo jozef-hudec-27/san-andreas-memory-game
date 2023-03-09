@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import BigSmoke from './images/bigsmoke.webp'
 import Catalina from './images/catalina.webp'
@@ -16,6 +16,7 @@ import Wuzimu from './images/wuzimu.webp'
 import CharatcerCards from './components/CharacterCards'
 import InfoModal from './components/InfoModal'
 import GameOverModal from './components/GameOverModal'
+import GameWinScreen from './components/GameWinScreen'
 import ScoreBoard from './components/ScoreBoard'
 
 const shuffleArray = (array) => {
@@ -31,6 +32,7 @@ const shuffleArray = (array) => {
 
 function App() {
   const [showInfo, setShowInfo] = useState(false)
+  const [showGameWin, setShowGameWin] = useState(false)
   const [repeatedCard, setRepeatedCard] = useState('')
   const [score, setScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
@@ -52,6 +54,12 @@ function App() {
   )
   const [usedCharacters, setUsedCharacters] = useState([])
 
+  useEffect(() => {
+    if (score === 12) {
+      setShowGameWin(true)
+    }
+  }, [score])
+
   const randomizeCharacters = () => {
     setCharacters((prev) => {
       const newCharacters = shuffleArray(prev.slice())
@@ -65,16 +73,19 @@ function App() {
     setRepeatedCard(repeatedCard)
   }
 
+  const restartGame = () => {
+    setRepeatedCard('')
+    randomizeCharacters()
+    setShowGameWin(false)
+    setScore(0)
+    setUsedCharacters([])
+  }
+
   return (
     <div id="main">
       {showInfo && <InfoModal setShowInfo={setShowInfo} />}
-      {repeatedCard && (
-        <GameOverModal
-          repeatedCard={repeatedCard}
-          setRepeatedCard={setRepeatedCard}
-          randomizeCharacters={randomizeCharacters}
-        />
-      )}
+      {repeatedCard && <GameOverModal repeatedCard={repeatedCard} restartGame={restartGame} />}
+      {showGameWin && <GameWinScreen restartGame={restartGame} />}
 
       <div className="flexbox gap-10 flex-center">
         <h1>San Andreas Memory Game</h1>

@@ -15,7 +15,7 @@ export default function GameOverModal(props) {
     }
   }, [])
 
-  const { repeatedCard, setRepeatedCard, randomizeCharacters } = props
+  const { repeatedCard, restartGame } = props
 
   return (
     <>
@@ -25,10 +25,7 @@ export default function GameOverModal(props) {
         <button
           style={{ marginTop: 'auto' }}
           className="play-again-btn"
-          onClick={() => {
-            setRepeatedCard('')
-            randomizeCharacters()
-          }}
+          onClick={restartGame}
         >
           Play again
         </button>
