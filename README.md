@@ -21,4 +21,6 @@ Some of the technologies used:
 
 [See it live](jozef-hudec-27.github.io/san-andreas-memory-game/)
 
-![Memory game screenshot](https://github.com/jozef-hudec-27/san-andreas-memory-game/blob/main/src/images/gamescreenshot.png?raw=true)
+![Game](https://github.com/jozef-hudec-27/san-andreas-memory-game/blob/main/src/images/screenshot_game.png?raw=true)
+
+![Win screen](https://github.com/jozef-hudec-27/san-andreas-memory-game/blob/main/src/images/screenshot_missionpassed.png?raw=true)
