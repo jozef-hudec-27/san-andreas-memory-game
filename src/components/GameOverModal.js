@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import GameOverSound from '../sounds/gameover.mp3'
 
 export default function GameOverModal(props) {
   useEffect(() => {
@@ -22,11 +23,7 @@ export default function GameOverModal(props) {
       <section id="game-over-modal" className="modal">
         <h1>Game Over!</h1>
         <p>You clicked on {repeatedCard} twice.</p>
-        <button
-          style={{ marginTop: 'auto' }}
-          className="play-again-btn"
-          onClick={restartGame}
-        >
+        <button style={{ marginTop: 'auto' }} className="play-again-btn" onClick={restartGame}>
           Play again
         </button>
       </section>
@@ -38,6 +35,10 @@ export default function GameOverModal(props) {
           if (['Enter', 'Space'].includes(e.code)) e.currentTarget.click()
         }}
       ></div>
+
+      <audio style={{ display: 'none' }} autoPlay>
+        <source src={GameOverSound} type="audio/mpeg" />
+      </audio>
     </>
   )
 }
