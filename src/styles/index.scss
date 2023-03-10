@@ -154,8 +154,9 @@ h2 {
     left: 4px;
     color: white;
 
-    &:hover, &:focus {
-        transform: scale(1.2);
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
     }
   }
 }

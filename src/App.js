@@ -19,23 +19,15 @@ import GameOverModal from './components/GameOverModal'
 import GameWinScreen from './components/GameWinScreen'
 import ScoreBoard from './components/ScoreBoard'
 
-const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    const temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
-  }
-
-  return array
-}
+import shuffleArray from './utilities/shuffleArray'
+import storageAvailable from './utilities/storageAvailable'
 
 function App() {
   const [showInfo, setShowInfo] = useState(false)
   const [showGameWin, setShowGameWin] = useState(false)
   const [repeatedCard, setRepeatedCard] = useState('')
   const [score, setScore] = useState(0)
-  const [bestScore, setBestScore] = useState(0)
+  const [bestScore, setBestScore] = useState(storageAvailable('localStorage') ? +localStorage.getItem('bestScore') : 0)
   const [characters, setCharacters] = useState(
     shuffleArray([
       ['Big Smoke', BigSmoke, 1],
@@ -49,16 +41,21 @@ function App() {
       ['Tenpenny', Tenpenny, 9],
       ['The Truth', TheTruth, 10],
       ['Toreno', Toreno, 11],
-      ['Wuzimu', Wuzimu, 12],
+      ['Wu Zi Mu', Wuzimu, 12],
     ])
   )
   const [usedCharacters, setUsedCharacters] = useState([])
 
   useEffect(() => {
+    if (score > bestScore) {
+      setBestScore(score)
+      if (storageAvailable('localStorage')) localStorage.setItem('bestScore', score)
+    }
+
     if (score === 12) {
       setShowGameWin(true)
     }
-  }, [score])
+  }, [score, bestScore])
 
   const randomizeCharacters = () => {
     setCharacters((prev) => {
@@ -103,7 +100,6 @@ function App() {
         characters={characters}
         randomizeCharacters={randomizeCharacters}
         setScore={setScore}
-        setBestScore={setBestScore}
         gameOver={gameOver}
         usedCharacters={usedCharacters}
         setUsedCharacters={setUsedCharacters}

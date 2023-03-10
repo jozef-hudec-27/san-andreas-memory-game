@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons'
+
 import MissionPassed from '../images/missionpassed.png'
 import MissionPassedSound from '../sounds/missionpassed.mp3'
+
 import Audio from './Audio'
+
 import useBlockTab from '../hooks/useBlockTab'
 
 export default function GameWinScreen(props) {

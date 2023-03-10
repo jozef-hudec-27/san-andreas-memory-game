@@ -1,6 +1,6 @@
 export default function CharatcerCard(props) {
   const [name, image, charNum] = props.character
-  const { randomizeCharacters, setScore, setBestScore, gameOver, usedCharacters, setUsedCharacters } = props
+  const { randomizeCharacters, setScore, gameOver, usedCharacters, setUsedCharacters } = props
 
   return (
     <button
@@ -12,12 +12,6 @@ export default function CharatcerCard(props) {
 
         setScore((prevScore) => {
           const newScore = prevScore + 1
-
-          setBestScore((prevBestScore) => {
-            const newBestScore = newScore > prevBestScore ? newScore : prevBestScore
-            return newBestScore
-          })
-
           return newScore
         })
 

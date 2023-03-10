@@ -1,5 +1,7 @@
 import GameOverSound from '../sounds/gameover.mp3'
+
 import Audio from './Audio'
+
 import useBlockTab from '../hooks/useBlockTab'
 
 export default function GameOverModal(props) {

@@ -1,7 +1,7 @@
 import CharatcerCard from './CharacterCard'
 
 export default function CharatcerCards(props) {
-  const { characters, randomizeCharacters, setScore, setBestScore, gameOver, usedCharacters, setUsedCharacters } = props
+  const { characters, randomizeCharacters, setScore, gameOver, usedCharacters, setUsedCharacters } = props
 
   return (
     <section id="character-cards">
@@ -12,7 +12,6 @@ export default function CharatcerCards(props) {
             character={character}
             randomizeCharacters={randomizeCharacters}
             setScore={setScore}
-            setBestScore={setBestScore}
             gameOver={gameOver}
             usedCharacters={usedCharacters}
             setUsedCharacters={setUsedCharacters}
