@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/san-andreas-memory-game/static/css/main.6952b15a.css",
+    "main.js": "/san-andreas-memory-game/static/js/main.78fd6a3c.js",
+    "static/js/787.686a9274.chunk.js": "/san-andreas-memory-game/static/js/787.686a9274.chunk.js",
+    "static/media/grovestreet.jpg": "/san-andreas-memory-game/static/media/grovestreet.bbe8a9924aa82125d4a9.jpg",
+    "static/media/gameover.mp3": "/san-andreas-memory-game/static/media/gameover.50299e9a4a04d3663d6f.mp3",
+    "static/media/missionpassed.mp3": "/san-andreas-memory-game/static/media/missionpassed.a88e536fae72cda84fe4.mp3",
+    "static/media/missionpassed.png": "/san-andreas-memory-game/static/media/missionpassed.c55355f2df73878bdeaf.png",
+    "static/media/diploma.woff": "/san-andreas-memory-game/static/media/diploma.7937c2fd8a8fc833105c.woff",
+    "static/media/diploma.woff2": "/san-andreas-memory-game/static/media/diploma.d02999bf2fc69924fd5f.woff2",
+    "static/media/pricedown.woff": "/san-andreas-memory-game/static/media/pricedown.b7e2d4cff4cb3fee1f00.woff",
+    "static/media/pricedown.woff2": "/san-andreas-memory-game/static/media/pricedown.c727bba77e32cbfdc6ed.woff2",
+    "static/media/catalina.webp": "/san-andreas-memory-game/static/media/catalina.7a296b9df7d20c4e1693.webp",
+    "static/media/cesar.webp": "/san-andreas-memory-game/static/media/cesar.daf022e625080e57e4ee.webp",
+    "static/media/ryder.webp": "/san-andreas-memory-game/static/media/ryder.147cbc27ef106626605e.webp",
+    "static/media/thetruth.webp": "/san-andreas-memory-game/static/media/thetruth.f488be45d8d9e33d5919.webp",
+    "static/media/sweet.webp": "/san-andreas-memory-game/static/media/sweet.3323eb9085c6194a6d68.webp",
+    "static/media/madddogg.webp": "/san-andreas-memory-game/static/media/madddogg.8b013ce8a6d68f25aa71.webp",
+    "static/media/tenpenny.webp": "/san-andreas-memory-game/static/media/tenpenny.91d1b811b0b3a9783b21.webp",
+    "static/media/bigsmoke.webp": "/san-andreas-memory-game/static/media/bigsmoke.e805366f968ded5ec54b.webp",
+    "static/media/toreno.webp": "/san-andreas-memory-game/static/media/toreno.b68b8d0959c4fe67880e.webp",
+    "static/media/claude.webp": "/san-andreas-memory-game/static/media/claude.324e05232f0b04249035.webp",
+    "static/media/wuzimu.webp": "/san-andreas-memory-game/static/media/wuzimu.21e7f5a9037b0435de45.webp",
+    "static/media/cj.webp": "/san-andreas-memory-game/static/media/cj.45eacf2131807219d5e2.webp",
+    "index.html": "/san-andreas-memory-game/index.html",
+    "main.6952b15a.css.map": "/san-andreas-memory-game/static/css/main.6952b15a.css.map",
+    "main.78fd6a3c.js.map": "/san-andreas-memory-game/static/js/main.78fd6a3c.js.map",
+    "787.686a9274.chunk.js.map": "/san-andreas-memory-game/static/js/787.686a9274.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6952b15a.css",
+    "static/js/main.78fd6a3c.js"
+  ]
+}
