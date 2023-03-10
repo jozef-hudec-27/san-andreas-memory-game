@@ -19,7 +19,7 @@ Some of the technologies used:
 - Sass
 - Local Storage
 
-[See it live](jozef-hudec-27.github.io/san-andreas-memory-game/)
+[See it live](https://jozef-hudec-27.github.io/san-andreas-memory-game//)
 
 ![Game](https://github.com/jozef-hudec-27/san-andreas-memory-game/blob/main/src/images/screenshot_game.png?raw=true)
 
