@@ -1,20 +1,9 @@
-import { useEffect } from 'react'
 import GameOverSound from '../sounds/gameover.mp3'
+import Audio from './Audio'
+import useBlockTab from '../hooks/useBlockTab'
 
 export default function GameOverModal(props) {
-  useEffect(() => {
-    const blockTab = (e) => {
-      e.preventDefault()
-    }
-
-    document.getElementById('character-cards').addEventListener('keydown', blockTab)
-    document.getElementById('info-btn').addEventListener('keydown', blockTab)
-
-    return () => {
-      document.getElementById('character-cards').removeEventListener('keydown', blockTab)
-      document.getElementById('info-btn').removeEventListener('keydown', blockTab)
-    }
-  }, [])
+  useBlockTab()
 
   const { repeatedCard, restartGame } = props
 
@@ -36,9 +25,7 @@ export default function GameOverModal(props) {
         }}
       ></div>
 
-      <audio style={{ display: 'none' }} autoPlay>
-        <source src={GameOverSound} type="audio/mpeg" />
-      </audio>
+      <Audio src={GameOverSound} />
     </>
   )
 }

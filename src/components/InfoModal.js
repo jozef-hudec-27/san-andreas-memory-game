@@ -1,4 +1,8 @@
+import useBlockTab from '../hooks/useBlockTab'
+
 export default function InfoModal(props) {
+  useBlockTab()
+
   const { setShowInfo } = props
 
   return (
